@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        main{
+            width: 500px;
+            height: auto;
+            border: 1px solid #2196f3;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        span{
+            display: block;
+            width: 500px;
+            height: 50px;
+            text-align: center;
+            color: red;
+            font-size: 25px;
+            line-height: 50px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #2196f3;
+        }
+        ul{
+            box-sizing: border-box;
+            width: 100%;
+            height:auto;
+            border-bottom: 1px solid #2196f3;
+            list-style: none;
+        }
+        input{
+            width: 100%;
+            height: 150px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #2196f3;
+            outline:medium
+        }
+    </style>
+</head>
+<body>
+<main>
+    <span>我要留言</span>
+    <ul><li></li></ul>
+    <input type="text">
+</main>
+</body>
+</html>
+<script>
+    let input=document.querySelector("input");
+    let ul = document.querySelector("ul");
+    input.onkeydown=function (e) {
+        if (e.keyCode==13){
+        let li = ul.firstChild.cloneNode();
+        li.innerText = input.value;
+        ul.appendChild(li);
+        input.value = "";
+    }
+    }
+    function add(){
+
+    }
+</script>
